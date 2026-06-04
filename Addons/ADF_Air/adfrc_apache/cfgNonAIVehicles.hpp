@@ -6,9 +6,9 @@ class CfgNonAIVehicles
 		model = "\ADF_Air\adfrc_apache\Heli_Attack_03_wreck_F.p3d";
 		hiddenSelections[] =
 		{
-			camo1,
-			camo2,
-			camo3
+			"camo1",
+			"camo2",
+			"camo3"
 		};
 	};
 };

@@ -10,9 +10,9 @@ class CfgPatches
 		};
 		requiredVersion = 0.1;
 		units[] =
-        {
+		{
 			"adfrc_apache"
-        };
+		};
 		weapons[] = {/* Automated */};
 	};
 };

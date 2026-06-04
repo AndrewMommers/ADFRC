@@ -2,9 +2,9 @@ class MFD
 {
 	class AirplaneHUD
 	{
-		topLeft = HUD_top_left;
-		topRight = HUD_top_right;
-		bottomLeft = HUD_bottom_left;
+		topLeft = "HUD_top_left";
+		topRight = "HUD_top_right";
+		bottomLeft = "HUD_bottom_left";
 		borderLeft = 0;
 		borderRight = 0;
 		borderTop = 0;
@@ -14,7 +14,7 @@ class MFD
 		helmetPosition[] = {-0.025,0.025,0.1};
 		helmetRight[] = {0.05,0.0,0.0};
 		helmetDown[] = {0.0,-0.05,0.0};
-		font = LucidaConsoleB;
+		font = "LucidaConsoleB";
 		turret[] = {-2};
 		class Bones
 		{
@@ -173,9 +173,9 @@ class MFD
 					sourceScale = 1;
 					align = "center";
 					scale = 1;
-					pos[] = {{"0.80-0.302","0.082-0.025"},1};
-					right[] = {{"0.83-0.302","0.082-0.025"},1};
-					down[] = {{"0.80-0.302","0.113-0.025"},1};
+					pos[] = {{0.498,0.057},1};
+					right[] = {{0.528,0.057},1};
+					down[] = {{0.498,0.088},1};
 				};
 				class HeadingArrow
 				{
@@ -635,9 +635,9 @@ class MFD
 					scale = 1;
 					sourceScale = 1;
 					align = "right";
-					pos[] = {{"0.075 +0.035",0.8},1};
+					pos[] = {{0.11,0.8},1};
 					right[] = {{0.14,0.8},1};
-					down[] = {{"0.075 +0.035",0.825},1};
+					down[] = {{0.11,0.825},1};
 				};
 				class WPKM
 				{
@@ -647,9 +647,9 @@ class MFD
 					scale = 1;
 					sourceScale = 1;
 					align = "right";
-					pos[] = {{"0.075 +0.16",0.775},1};
+					pos[] = {{0.235,0.775},1};
 					right[] = {{0.265,0.775},1};
-					down[] = {{"0.075 +0.16",0.803},1};
+					down[] = {{0.235,0.803},1};
 				};
 				class WPTime
 				{
@@ -659,9 +659,9 @@ class MFD
 					scale = 1;
 					sourceScale = 1;
 					align = "right";
-					pos[] = {{"0.075 +0.11",0.8},1};
+					pos[] = {{0.185,0.8},1};
 					right[] = {{0.215,0.8},1};
-					down[] = {{"0.075 +0.11",0.825},1};
+					down[] = {{0.185,0.825},1};
 				};
 				class WP
 				{
@@ -747,9 +747,9 @@ class MFD
 					scale = 1;
 					sourceScale = 1;
 					align = "right";
-					pos[] = {{"0.127+0.49",0.869},1};
+					pos[] = {{0.617,0.869},1};
 					right[] = {{0.652,0.869},1};
-					down[] = {{"0.127+0.49",0.904},1};
+					down[] = {{0.617,0.904},1};
 				};
 				class DistanceText
 				{
@@ -759,9 +759,9 @@ class MFD
 					scale = 1;
 					sourceScale = 1;
 					align = "right";
-					pos[] = {{"0.125+0.49",0.901},1};
+					pos[] = {{0.615,0.901},1};
 					right[] = {{0.65,0.901},1};
-					down[] = {{"0.125+0.49",0.936},1};
+					down[] = {{0.615,0.936},1};
 				};
 				class TOF_source
 				{
@@ -793,15 +793,15 @@ class MFD
 		turret[] = {-1};
 		class Draw
 		{
-			alpha = user3;
-			color[] = {user0,user1,user2};
+			alpha = "user3";
+			color[] = {"user0", "user1", "user2"};
 			condition = "(1 - (cameraHeadingDiffY<=-14) + (abs(cameraHeadingDiffX)>=26))*on";
 			class cmWeapons
 			{
-				type = text;
-				source = cmweapon;
+				type = "text";
+				source = "cmweapon";
 				sourceScale = 1;
-				align = right;
+				align = "right";
 				scale = 0.5;
 				pos[] = {{0.001,0.869},1};
 				right[] = {{0.036,0.869},1};
@@ -809,10 +809,10 @@ class MFD
 			};
 			class cmAmmo
 			{
-				type = text;
-				source = cmammo;
+				type = "text";
+				source = "cmammo";
 				sourceScale = 1;
-				align = right;
+				align = "right";
 				scale = 0.5;
 				pos[] = {{0.001,0.901},1};
 				right[] = {{0.036,0.901},1};

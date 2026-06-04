@@ -3,11 +3,11 @@ class RotorLibHelicopterProperties
 	RTDconfig = "ADF_Air\adfrc_apache\RTD_Heli_Attack_03.xml";
 	defaultCollective = 0.621;
 	autoHoverCorrection[] =
-    {
-        0,      // X
-        2.88,   // Y
-        0       // Z
-    };
+	{
+		0,      // X
+		2.88,   // Y
+		0       // Z
+	};
 	retreatBladeStallWarningSpeed = 79.536;
 	maxTorque = 3500;
 	stressDamagePerSec = 0.0033333332;

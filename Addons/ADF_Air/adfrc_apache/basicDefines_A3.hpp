@@ -139,28 +139,28 @@
 #define mag_xx(mag,num) \
     class _xx_##mag \
     { \
-        magazine = ##mag##; \
+        magazine = #mag; \
         count = ##num##; \
     }
 
 #define weap_xx(weap,num) \
     class _xx_##weap \
     { \
-        weapon = ##weap##; \
+        weapon = #weap; \
         count = ##num##; \
     }
 
 #define item_xx(item,num) \
     class _xx_##item \
     { \
-        name = ##item##; \
+        name = #item; \
         count = ##num##; \
     }
 
 #define bag_xx(bag,num) \
     class _xx_##bag \
     { \
-        backpack = ##bag##; \
+        backpack = #bag; \
         count = ##num##; \
     }
 
