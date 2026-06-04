@@ -4,11 +4,11 @@ altNoForce = 6000;
 maxSpeed = 293;
 
 /* Main rotor settings */
-mainBladeCenter = rotor_center;
+mainBladeCenter = "rotor_center";
 mainBladeRadius = 7.315;
 
 /* Tail rotor settings */
-tailBladeCenter = rotor_02_center;
+tailBladeCenter = "rotor_02_center";
 tailBladeRadius = 1.395;
 
 /* Force coefficients */
