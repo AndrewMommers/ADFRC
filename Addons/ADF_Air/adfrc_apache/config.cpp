@@ -25,40 +25,6 @@ class CfgPatches
 /* Configuration */
 class CfgVehicles
 {
-	/* Inheritance Tree */
-	class Air;
-	class Helicopter: Air
-	{
-		class Turrets;
-		class HitPoints;
-	};
-	class Helicopter_Base_F: Helicopter
-	{
-		class HitPoints: HitPoints
-		{
-			class HitHull;
-			class HitFuel;
-			class HitAvionics;
-			class HitMissiles;
-			class HitEngine1;
-			class HitEngine2;
-			class HitTurret;
-			class HitHRotor;
-			class HitVRotor;
-			class HitGlass1;
-			class HitWinch;
-		};
-		class Turrets: Turrets
-		{
-			class MainTurret;
-		};
-		class AnimationSources;
-		class EventHandlers;
-		class ViewOptics;
-		class ViewPilot;
-		class Components;
-	};
-
 	/* Bases */
 	class Heli_Attack_03_base_F: Helicopter_Base_F
 	{
@@ -75,7 +41,7 @@ class CfgVehicles
 		textSingular = "$STR_A3_nameSound_veh_air_gunship_s";
 		textPlural = "$STR_A3_nameSound_veh_air_gunship_p";
 		nameSound = "veh_air_gunship_s";
-		scope = "private";
+		scope = 0;
 		displayName = "AH-64D Apache Guardian";
 		model = "\ADF_Air\adfrc_apache\Heli_Attack_03_F.p3d";
 		icon = "\ADF_Air\adfrc_apache\data\ui\Map_Heli_Attack_03_CA.paa";
@@ -141,22 +107,22 @@ class CfgVehicles
 		numberPhysicalWheels = 3;
 
 		/* Crew */
-		crewVulnerable = "false";
-		castDriverShadow = "true";
-		viewCargoShadow = "true";
+		crewVulnerable = 0;
+		castDriverShadow = 1;
+		viewCargoShadow = 1;
 		driverAction = "Heli_Attack_03_pilot";
 		driverInAction = "Heli_Attack_03_pilot";
-		driverCanEject = "false";
+		driverCanEject = 0;
 		driverLeftHandAnimName = "lever_pilot";
 		driverRightHandAnimName = "stick_pilot";
 		driverLeftLegAnimName = "";
 		driverRightLegAnimName = "";
 
 		/* Enter & Exit Animations */
-		preciseGetInOut = "false";
+		preciseGetInOut = 0;
 		getInRadius = 1.5;
-		getinAction = "GetInHigh";
-		getoutaction = "GetOutHigh";
+		getInAction = "GetInHigh";
+		getOutAction = "GetOutHigh";
 
 		/* View */
 		class ViewPilot: ViewPilot
@@ -320,6 +286,7 @@ class CfgVehicles
 				"\ADF_Air\adfrc_apache\Data\Heli_Attack_03_adds_damage.rvmat",
 				"\ADF_Air\adfrc_apache\Data\Heli_Attack_03_adds_destruct.rvmat",
 
+				// Glass has no separate destruct rvmat; damage mat is intentionally reused for the destruct slot
 				"\ADF_Air\adfrc_apache\Data\Heli_Attack_03_glass.rvmat",
 				"\ADF_Air\adfrc_apache\Data\Heli_Attack_03_glass_damage.rvmat",
 				"\ADF_Air\adfrc_apache\Data\Heli_Attack_03_glass_damage.rvmat",
@@ -337,7 +304,7 @@ class CfgVehicles
 		/* Sensors & Components */
 		lockDetectionSystem = CM_Lock_Radar + CM_Lock_Laser;
 		incomingMissileDetectionSystem = CM_Radar_Missiles + CM_All_Missiles;
-		laserScanner = "true";
+		laserScanner = 1;
 		showAllTargets = 2;
 		radarTargetSize = 1.1;
 		irTargetSize = 1.2;
@@ -539,7 +506,7 @@ class CfgVehicles
 				class Wide
 				{
 					opticsDisplayName = "WFOV";
-					directionStabilized = "true";
+					directionStabilized = 1;
 					initAngleX = 0;
 					minAngleX = 0;
 					maxAngleX = 0;
@@ -589,8 +556,8 @@ class CfgVehicles
 			maxYRotSpeed = 1.0;
 			maxMouseXRotSpeed = 0.5;
 			maxMouseYRotSpeed = 0.5;
-			pilotOpticsShowCursor = "true";
-			controllable = "true";
+			pilotOpticsShowCursor = 1;
+			controllable = 1;
 		};
 
 		/* MFD */
@@ -608,17 +575,17 @@ class CfgVehicles
 		magazines[] = {"192Rnd_CMFlare_Chaff_Magazine", "PylonMissile_1Rnd_LG_scalpel", "PylonRack_12Rnd_missiles"};
 
 		/* Turrets */
-		enableManualFire = "true";
+		enableManualFire = 1;
 		class Turrets: Turrets
 		{
 			class MainTurret: MainTurret
 			{
 				turretInfoType = "RscOptics_Heli_Attack_01_gunner";
 				commanding = -1;
-				isCopilot = "true";
-				CanEject = "false";
-				startEngine = "false";
-				primaryGunner = "true";
+				isCopilot = 1;
+				canEject = 0;
+				startEngine = 0;
+				primaryGunner = 1;
 
 				/* Servos */
 				minElev = -60;
@@ -629,7 +596,7 @@ class CfgVehicles
 				initTurn = 0;
 				maxHorizontalRotSpeed = 1.8;
 				maxVerticalRotSpeed = 1.5;
-				stabilizedInAxes = "StabilizedInAxesBoth";
+				stabilizedInAxes = StabilizedInAxesBoth;
 				canLock = 1;
 
 				/* Sounds */
@@ -642,13 +609,13 @@ class CfgVehicles
 				/* Optics */
 				gunnerOpticsModel = "\A3\Weapons_F\Reticle\optics_empty.p3d";
 				gunnerOpticsEffect[] = {"TankCommanderOptics1", "BWTV"};
-				gunnerForceOptics = "false";
+				gunnerForceOptics = 0;
 				class OpticsIn
 				{
 					class Wide
 					{
 						opticsDisplayName = "WFOV";
-						directionStabilized = "true";
+						directionStabilized = 1;
 						initAngleX = 0;
 						initAngleY = 0;
 						minAngleX = -60;
@@ -805,9 +772,9 @@ class CfgVehicles
 				discreteDistanceInitIndex = 5;
 
 				/* Crew */
-				castGunnerShadow = "true";
-				viewGunnerShadow = "true";
-				outGunnerMayFire = "true";
+				castGunnerShadow = 1;
+				viewGunnerShadow = 1;
+				outGunnerMayFire = 1;
 				gunnerAction = "Heli_Attack_03_Gunner";
 				gunnerInAction = "Heli_Attack_03_Gunner";
 				gunnerLeftHandAnimName = "";
@@ -816,7 +783,7 @@ class CfgVehicles
 				gunnerRightLegAnimName = "";
 
 				/* Enter & Exit Animations */
-				preciseGetInOut = "false";
+				preciseGetInOut = 0;
 				getInRadius = 1.5;
 				gunnerGetInAction = "GetInHigh";
 				gunnerGetOutAction = "GetOutHigh";
@@ -943,10 +910,10 @@ class CfgVehicles
 				drawLight = 1;
 				drawLightSize = 0.15;
 				drawLightCenterSize = 0.04;
-				activeLight = "false";
-				blinking = "false";
-				dayLight = "false";
-				useFlare = "true";
+				activeLight = 0;
+				blinking = 0;
+				dayLight = 0;
+				useFlare = 1;
 				class Attenuation
 				{
 					start = 0;
@@ -1004,10 +971,10 @@ class CfgVehicles
 					0.1     // B
 				};
 				name = "CollisionLight_white_1_pos";
-				blinking = "true";
-				blinkingStartsOn = "true";
-				blinkingPattern[] = {0.1,0.9};
-				blinkingPatternGuarantee = "true";
+				blinking = 1;
+				blinkingStartsOn = 1;
+				blinkingPattern[] = {0.1, 0.9};
+				blinkingPatternGuarantee = 1;
 				drawLightSize = 0.35;
 				drawLightCenterSize = 0.05;
 			};
@@ -1055,9 +1022,9 @@ class CfgVehicles
 				outerAngle = 65;
 				coneFadeCoef = 10;
 				intensity = 50;
-				useFlare = "true";
-				dayLight = "false";
-				FlareSize = 10;
+				useFlare = 1;
+				dayLight = 0;
+				flareSize = 10;
 				flareMaxDistance = 250;
 				class Attenuation
 				{
@@ -1095,8 +1062,8 @@ class CfgVehicles
 			{
 				source = "Hit";
 				hitpoint = "HitGlass1";
-				raw = "true";
-				passThrough = "false";
+				raw = 1;
+				passThrough = 0;
 			};
 			class HitGlass2: HitGlass1
 			{
@@ -1188,7 +1155,7 @@ class CfgVehicles
 		editorPreview = "\ADF_Air\adfrc_apache\preview\adfrc_apache.jpg";
 		scope = 2;
 		scopeCurator = 2;
-		side = "TWest";
+		side = TWest;
 		faction = "ADFRC_F_MD";
 		crew = "ADFRC_MD_AMCU_Soldier_HeliPilot";
 		typicalCargo[] = {"ADFRC_MD_AMCU_Soldier_HeliPilot"};
@@ -1239,7 +1206,7 @@ class CfgWeapons
 		modes[] = {"FullAuto"};
 		cursorAim = "EmptyCursor";
 		canLock = 2;
-		ballisticsComputer = "16";
+		ballisticsComputer = 16;
 		FCSMaxLeadSpeed = 27.778;
 		FCSZeroingDelay = 1;
 		reloadMagazineSound[] = {"", 1, 1};
