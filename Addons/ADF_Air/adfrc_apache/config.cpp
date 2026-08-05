@@ -25,6 +25,9 @@ class CfgPatches
 /* Configuration */
 class CfgVehicles
 {
+	/* Inheritance Tree */
+	#include "cfgHelis.hpp"
+
 	/* Bases */
 	class Heli_Attack_03_base_F: Helicopter_Base_F
 	{
@@ -440,7 +443,7 @@ class CfgVehicles
 				};
 			};
 			class TransportPylonsComponent {
-				uiPicture = "\data\ui\Heli_Attack_03_EDEN_CA.paa";
+				uiPicture = "\ADF_Air\adfrc_apache\data\ui\Heli_Attack_03_EDEN_CA.paa";
 				class Pylons {
 					class PylonLeft1 {
 						attachment = "PylonMissile_1Rnd_LG_scalpel";
@@ -452,14 +455,14 @@ class CfgVehicles
 					class PylonLeft2: PylonLeft1 {
 						attachment = "PylonRack_12Rnd_missiles";
 						priority = 4;
-						hardpoints[] = {"DAR", "UNI_SCALPEL", "gatling_30mm_base", "B_ASRRAM_EJECTOR"};
+						hardpoints[] = {"DAR", "UNI_SCALPEL", "gatling_30mm_base", "B_ASRAAM_EJECTOR"};
 						turret[] = {};
 						UIposition[] = {0.08, 0.35}; // X, Y
 					};
 					class PylonLeft3: PylonLeft1 {
 						attachment = "PylonRack_4Rnd_LG_scalpel";
 						priority = 3;
-						hardpoints[] = {"DAR", "UNI_SCALPEL", "gatling_30mm_base", "B_ASRRAM_EJECTOR"};
+						hardpoints[] = {"DAR", "UNI_SCALPEL", "gatling_30mm_base", "B_ASRAAM_EJECTOR"};
 						turret[] = {0};
 						UIposition[] = {0.1, 0.3}; // X, Y
 					};
@@ -1120,13 +1123,9 @@ class CfgVehicles
 		};
 		class TransportMagazines
 		{
-			mag_xx(SmokeShell,2);
-			mag_xx(SmokeShellGreen,2);
-			mag_xx(30Rnd_556x45_Stanag,4);
 		};
 		class TransportWeapons
 		{
-			weap_xx(arifle_Mk20C_F,2);
 		};
 		class TransportItems
 		{
@@ -1198,6 +1197,7 @@ class CfgWeapons
 {
 	class ADFRC_gatling_30mm_base: gatling_30mm_base
 	{
+		scope = 0;
 		displayName = "30mm M230 Chain Gun";
 		magazines[] =
 		{
@@ -1329,7 +1329,7 @@ class CfgMagazines
 	class ADFRC_1200Rnd_Chaingun_30mm_Tracer: ADFRC_1200Rnd_Chaingun_30mm
 	{
 		author = "ADF Re-Cut";
-		scope = 2;
+		scope = 0;
 		displayName = "DEPRECATED";
 		ammo = "Gatling_30mm_HE_Plane_CAS_01_Yellow_F";
 	};
